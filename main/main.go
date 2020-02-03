@@ -311,6 +311,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// main fungsi yang pertama kali di eksekusi
 func main() {
 	http.HandleFunc("/", Login)
 	http.HandleFunc("/actlogin", ActionLogin)
@@ -323,4 +324,5 @@ func main() {
 	http.HandleFunc("/logout", Index)
 	log.Println("Server started on: http://localhost:8181")
 	http.ListenAndServe(":8181", nil)
+
 }
