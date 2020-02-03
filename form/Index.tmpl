@@ -1,0 +1,32 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+  <a href="/logout">Logout</a>
+    <h2> Registered </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>UserName</td>
+        <td>Name</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+        <td>Add</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .ID }}</td>
+        <td>{{ .UserName }}</td>
+        <td>{{ .Name }} </td> 
+        <td><a href="/show?id={{ .ID }}&token={{ .Token }}">View</a></td>
+        <td><a href="/edit?id={{ .ID }}&token={{ .Token }}">Edit</a></td>
+        <td><a href="/delete?id={{ .ID }}&token={{ .Token }}">Delete</a></td>
+        <td><a href="/new?id={{ .ID }}&token={{ .Token }}">New</a></td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

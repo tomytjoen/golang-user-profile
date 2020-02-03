@@ -1,0 +1,13 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    <a href="/?token={{ .Token }}">HOME</a>
+   <h2>Edit Form</h2>  
+    <form method="POST" action="update?token={{ .Token }}">
+      <input type="hidden" name="uid" value="{{ .ID }}" />
+      <label> UserName </label><input type="text" name="username" value="{{ .UserName }}"  /><br />
+      <label> Name </label><input type="text" name="name" value="{{ .Name }}"  /><br />
+      <label> Name </label><input type="text" name="email" value="{{ .Email }}"  /><br />
+      <input type="submit" value="Update user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

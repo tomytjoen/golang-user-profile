@@ -1,0 +1,9 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    <a href="/?token={{ .Token }}">HOME</a> | <a href="/new?token={{ .Token }}">NEW</a>
+    <h2> ID {{ .ID }} </h2>
+      <p>UserName: {{ .UserName }}</p>
+      <p>Name: {{ .Name }}</p>
+      <p>Email: {{ .Email }}</p><br /> <a href="/edit?id={{ .ID }}&token={{ .Token }}">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

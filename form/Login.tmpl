@@ -1,0 +1,10 @@
+{{ define "Login" }}
+  {{ template "Header" }}
+   <h2>Login User</h2>  
+    <form method="POST" action="actlogin">
+      <label> UserName </label><input type="text" name="username" value=""  /><br />
+      <label> Password </label><input type="password" name="password" value=""  /><br />
+      <input type="submit" value="Login" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

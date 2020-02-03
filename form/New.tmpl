@@ -1,0 +1,13 @@
+{{ define "New" }}
+  {{ template "Header" }}
+   <a href="/?token={{ .Token }}">HOME</a> | <a href="/new?token={{ .Token }}">NEW</a>
+   <h2>New Profile</h2>  
+    <form method="POST" action="insert?token={{ .Token }}">
+      <label> UserName </label><input type="text" name="username" /><br />
+      <label> Name </label><input type="text" name="name" /><br />
+      <label> Email </label><input type="text" name="email" /><br />
+      <label> Password </label><input type="password" name="password" /><br />
+      <input type="submit" value="Save user" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}
